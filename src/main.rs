@@ -115,8 +115,18 @@ fn main() {
         TimerFuture::new(Duration::new(2, 0)).await;
         println!("Sean's Komputer: done!");
     });
+    spawner.spawn(async {
+        println!("Sean's Komputer: howdy2!"); // Pakai signature namamu
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Sean's Komputer: done2!");
+    });
+    spawner.spawn(async {
+        println!("Sean's Komputer: howdy3!"); // Pakai signature namamu
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Sean's Komputer: done3!");
+    });
 
     println!("Sean's Komputer: hey hey"); // Tambahkan baris ini
-    drop(spawner);
+    // drop(spawner);
     executor.run();
 }
