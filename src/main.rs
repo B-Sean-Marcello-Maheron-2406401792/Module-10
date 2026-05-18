@@ -116,6 +116,7 @@ fn main() {
         println!("Sean's Komputer: done!");
     });
 
+    println!("Sean's Komputer: hey hey"); // Tambahkan baris ini
     drop(spawner);
     executor.run();
 }
